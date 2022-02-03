@@ -164,8 +164,8 @@ protected:
 
 	void OnFire();
 
-	//UFUNCTION()
-	//void OnVault();
+	UFUNCTION()
+	void OnVault();
 
 	void NextWeapon();
 

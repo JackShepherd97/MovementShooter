@@ -9,14 +9,14 @@
 
 class AMoveShooterMechanicsCharacter;
 
-//DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnVault);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnVault);
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class MOVESHOOTERMECHANICS_API UVaultComponent : public UActorComponent
 {
 	GENERATED_BODY()
 
-	/*AMoveShooterMechanicsCharacter* PlayerCharacter;
+	AMoveShooterMechanicsCharacter* PlayerCharacter;
 
 	bool bCanTrace = true;
 
@@ -34,11 +34,11 @@ class MOVESHOOTERMECHANICS_API UVaultComponent : public UActorComponent
 	UPROPERTY(EditAnywhere)
 	FRuntimeFloatCurve LerpCurve;
 
-	*/
+	
 public:	
 	// Sets default values for this component's properties
 	UVaultComponent();
-	/*
+	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	FOnVault OnVault;
 
@@ -55,5 +55,5 @@ public:
 	void StartVault(float DeltaTime);
 
 	void EndVault();
-	*/
+	
 };

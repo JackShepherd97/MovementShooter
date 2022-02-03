@@ -67,7 +67,7 @@ AMoveShooterMechanicsCharacter::AMoveShooterMechanicsCharacter()
 
 	GrappleComponent = CreateDefaultSubobject<UGrappleComponent>(TEXT("Grapple Component"));
 
-	//VaultComponent = CreateDefaultSubobject<UVaultComponent>(TEXT("Vault Component"));
+	VaultComponent = CreateDefaultSubobject<UVaultComponent>(TEXT("Vault Component"));
 
 	WallRunComponent = CreateDefaultSubobject<UWallRunComponent>(TEXT("Wall Run Component"));
 
@@ -82,7 +82,7 @@ void AMoveShooterMechanicsCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 
-	//VaultComponent->OnVault.AddDynamic(this, &AMoveShooterMechanicsCharacter::OnVault);
+	VaultComponent->OnVault.AddDynamic(this, &AMoveShooterMechanicsCharacter::OnVault);
 
 	CurrentWeapon = GetWorld()->SpawnActor<AWeapon>(CurrentWeaponClass, FVector::ZeroVector, FRotator::ZeroRotator);
 	CurrentWeapon->AttachToComponent(Mesh1P, FAttachmentTransformRules(EAttachmentRule::SnapToTarget, true), TEXT("GripPoint"));
@@ -278,11 +278,11 @@ void AMoveShooterMechanicsCharacter::DestroyRepulsor()
 	Repulsor->Destroy();
 }
 
-//void AMoveShooterMechanicsCharacter::OnVault()
-//{
-	//UE_LOG(LogTemp, Warning, TEXT("Broadcast"));
-	//PlayerVault.Broadcast();
-//}
+void AMoveShooterMechanicsCharacter::OnVault()
+{
+	UE_LOG(LogTemp, Warning, TEXT("Broadcast"));
+	PlayerVault.Broadcast();
+}
 
 
 
